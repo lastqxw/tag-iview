@@ -18,40 +18,40 @@
             <div>
                 <Row class="margin-top-10" v-if="result.N02">
                     <Col>
-                        <Card>
-                            <p slot="title">
+                        <div style="border:1px solid #cccccc;padding:10px 0px">
+                            <p slot="title" class="biaoti">
                                 <!--<Icon type="at"></Icon>-->
                                 <img src="../../images/internet.png"/>
                                 本期互联网内容偏好
                             </p>
                             <Carousel v-model="internet" :dots="dots" :arrow="arrow" @on-change="changeWeb" class="content">
-                                <CarouselItem v-for="item in pageInternet" cla>
-                                    <Row type="flex" justify="start">
+                                <CarouselItem v-for="item in pageInternet">
+                                    <Row type="flex" justify="start" style="padding:20px 0 10px 0px">
                                         <Col span="3" style="margin:0 2%" v-for="(children,index) in web" :key="index">
-                                            <Card style="min-height: 237px">
-                                                <p slot="title" style="text-align: center;font-size: 16px;">{{children.n020007}}</p>
+                                            <div style="min-height: 237px;border:1px solid #cccccc;padding:10px 0px">
+                                                <p slot="title" style="text-align: center;font-size: 16px;border-bottom:1px solid #cccccc;padding:10px;font-weight: bold">{{children.n020007}}</p>
                                                 <div style="text-align: center;">
-                                                    <p style="font-weight: bold;">时长：{{ (children.n020002/3600).toFixed(2) }} H</p>
+                                                    <p style="font-weight: bold;margin-top: 10px;font-size: 14px;">时长：{{ (children.n020002/3600).toFixed(2) }} H</p>
                                                     <div class="custom-tag margin-top-10" v-bind:style="[{backgroundColor:'#2d8cf0'}]" v-if="children.secList.length>0">
                                                         <span>{{children.secList[0].n020007}}</span>
                                                     </div>
                                                     <div class="custom-tag margin-top-10" v-bind:style="[{backgroundColor:'#19be6b'}]"v-if="children.secList.length>1">
                                                         <span>{{children.secList[1].n020007}}</span>
                                                     </div>
-                                                    <p class="margin-top-10 custom-p" @click="all(children)">查看全部></p>
+                                                    <p class="margin-top-10 custom-p"  @click="all(children)">查看全部></p>
                                                 </div>
-                                            </Card>
+                                            </div>
                                         </Col>
                                     </Row>
                                 </CarouselItem>
                             </Carousel>
-                        </Card>
+                        </div>
                     </Col>
                 </Row>
                 <Row class="margin-top-10" v-if="result.N01">
                     <Col>
-                        <Card>
-                            <p slot="title">
+                        <div style="border:1px solid #cccccc;padding:10px 0px">
+                            <p slot="title" class="biaoti">
                                 <!--<Icon type="ipad"></Icon>-->
                                 <img src="../../images/appLike.png"/>
                                 <span>本期APP偏好</span>
@@ -59,41 +59,41 @@
                             </p>
                             <Carousel v-model="app" :dots="dots" :arrow="arrow" @on-change="changeApp">
                                 <CarouselItem v-for="item in pageApp">
-                                    <Row type="flex" justify="start">
+                                    <Row type="flex" justify="start" style="padding:20px 0 10px 0px">
                                         <Col span="3" style="margin: 0 2%" v-for="(children,index) in apps" :key="index">
-                                            <Card style="min-height: 237px">
-                                                <p slot="title" style="text-align: center;font-size: 16px;">{{children.n010002}}</p>
-                                                <div style="text-align: left;margin-left: 20%">
-                                                    <p style="font-weight: bold">排名：{{children.n010005}}</p>
-                                                    <p style="font-weight: bold">活跃天数：{{children.n010003}}</p>
-                                                    <p style="font-weight: bold">消耗流量：{{(children.n010004/1024/1024).toFixed(2)}} M</p>
-                                                    <p style="font-weight: bold">访问次数：{{children.n010008}}</p>
+                                            <div style="min-height: 237px;border:1px solid #cccccc;padding:10px 0px">
+                                                <p slot="title" style="text-align: center;font-size: 16px;border-bottom:1px solid #cccccc;padding:10px;font-weight: bold">{{children.n010002}}</p>
+                                                <div style="text-align: left;margin-left: 20% ;margin-top: 10px">
+                                                    <p style="font-weight: bold;font-size: 14px;">排名：{{children.n010005}}</p>
+                                                    <p style="font-weight: bold;font-size: 14px">活跃天数：{{children.n010003}}</p>
+                                                    <p style="font-weight: bold;font-size: 14px">消耗流量：{{(children.n010004/1024/1024).toFixed(2)}} M</p>
+                                                    <p style="font-weight: bold;font-size: 14px">访问次数：{{children.n010008}}</p>
                                                     <p class="margin-top-10 custom-p" @click="allApp(children)">查看全部></p>
                                                 </div>
-                                            </Card>
+                                            </div>
                                         </Col>
                                     </Row>
                                 </CarouselItem>
                             </Carousel>
-                        </Card>
+                        </div>
                     </Col>
                 </Row>
                 <Row class="margin-top-10" v-if="result.N03">
                     <Col>
-                        <Card>
-                            <p slot="title">
+                        <div style="border:1px solid #cccccc;padding:10px 0px">
+                            <p slot="title" class="biaoti">
                                 <!--<Icon type="pricetag"></Icon>-->
                                 <img src="../../images/like.png"/>
                                 本期兴趣偏好
                             </p>
                             <Carousel v-model="interest" :dots="dots" :arrow="arrow" @on-change="changeHabbit">
                                 <CarouselItem v-for="item in pageHabbit">
-                                    <Row type="flex" justify="start">
+                                    <Row type="flex" justify="start" style="padding:20px 0 10px 0px">
                                         <Col span="3" style="margin: 0 2%" v-for="(children,index) in habbit" :key="index">
-                                            <Card style="min-height: 237px">
-                                                <p slot="title" style="text-align: center;font-size: 16px;">{{children['n030002']}}</p>
+                                            <div style="min-height: 237px;border:1px solid #cccccc;padding:10px 0px">
+                                                <p slot="title" style="text-align: center;font-size: 16px;border-bottom:1px solid #cccccc;padding:10px;font-weight: bold">{{children['n030002']}}</p>
                                                 <div style="text-align: center;">
-                                                    <p style="font-weight: bold;">时长：{{ (children.n030007/3600).toFixed(2) }} H</p>
+                                                    <p style="font-weight: bold;margin-top: 10px;font-size: 14px;">时长：{{ (children.n030007/3600).toFixed(2) }} H</p>
                                                     <div class="custom-tag margin-top-10" v-bind:style="[{backgroundColor:'#2d8cf0'}]" v-if="children.secList.length>0">
                                                     <span >
                                                         {{children.secList[0].n030002}}
@@ -106,12 +106,12 @@
                                                     </div>
                                                     <p class="margin-top-10 custom-p" @click="allHabbit(children)">查看全部></p>
                                                 </div>
-                                            </Card>
+                                            </div>
                                         </Col>
                                     </Row>
                                 </CarouselItem>
                             </Carousel>
-                        </Card>
+                        </div>
                     </Col>
                 </Row>
                 <Modal v-model="modalInternet" width="60%">
