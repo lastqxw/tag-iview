@@ -5,10 +5,12 @@ import Routers from './router';
 import Util from './libs/util';
 import App from './app.vue';
 import 'iview/dist/styles/iview.css';
-
+import echarts from 'echarts';
+import VueI18n from 'vue-i18n';
+Vue.use(VueI18n);
 Vue.use(VueRouter);
 Vue.use(iView);
-
+Vue.prototype.$echarts = echarts;
 // 路由配置
 const RouterConfig = {
     mode: 'history',
