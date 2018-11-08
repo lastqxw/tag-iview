@@ -3,23 +3,19 @@
     @import './user-query.less';
 </style>
 <template>
-    <div>
-        <Row>
-            <Col>
-                <Card>
-                    <span>手机号码查询</span>
-                    <Input v-model="phone" placeholder="请输入手机号码" clearable style="width: 200px"></Input>
-                    <span class="margin-left-10">选择账期</span>
-                    <DatePicker type="month" placeholder="请选择账期" style="width: 200px" v-model="date" @on-change="changeDate"></DatePicker>
-                    <Button class="margin-left-10" type="primary" icon="search" @click="query">查询</Button>
-                </Card>
-            </Col>
+    <div style="padding:10px">
+        <Row class="card">
+            <span>手机号码查询</span>
+            <Input v-model="phone" placeholder="请输入手机号码" clearable style="width: 200px;border-radius: 0px"></Input>
+            <span class="margin-left-10">选择账期</span>
+            <DatePicker type="month" placeholder="请选择账期" style="width: 200px" class="date" v-model="date" @on-change="changeDate"></DatePicker>
+            <Button class="margin-left-10 searchButton" type="primary" icon="search" @click="query">查询</Button>
         </Row>
         <div style="position: relative;">
-            <Card class="margin-top-10" style="text-align: center;padding: 200px 0" v-if="JSON.stringify(result)=='{}' || result ==''">
+            <div class="margin-top-10" style="text-align: center;padding: 200px 0" v-if="JSON.stringify(result)=='{}' || result ==''">
                 <img src="../../images/background.png" />
-            </Card>
-            <Card >
+            </div>
+            <div>
                 <Row class="margin-top-10" v-if="result.N02">
                     <Col>
                         <Card>
@@ -196,7 +192,7 @@
                         <!--<Button @click="echarts" type="primary">确定</Button>-->
                     </div>
                 </Modal>
-            </Card>
+            </div>
             <Spin size="large" fix v-if="loading">
                 <Icon type="load-c" size=18 class="demo-spin-icon-load"></Icon>
                 <div>正在执行筛选，请稍后。。。</div>
